@@ -1,0 +1,1 @@
+aws cognito-idp sign-up --region us-west-2 --client-id 6uotl9nmsg0dpeefjqqvaj5378 --username jeff@martinzone.com --password Passw0rd!
