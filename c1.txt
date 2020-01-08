@@ -1,1 +1,18 @@
 npx aws-api-gateway-cli-test --username jeff@martinzone.com --password Passw0rd! --user-pool-id us-west-2_tV6NG4yZl --app-client-id 6uotl9nmsg0dpeefjqqvaj5378 --cognito-region us-west-2 --identity-pool-id us-west-2:2d020cc4-55bf-4e9d-8381-fa7449317ed2 --invoke-url https://w01mr1rnhe.execute-api.us-west-2.amazonaws.com/prod --api-gateway-region us-west-2 --path-template /notes --method POST --body "{\"content\":\"hello world aws 2020\",\"attachment\":\"hello.jpg\"}"
+
+
+
+
+//dev cognito tests
+aws cognito-idp sign-up --region us-west-2 --client-id 51j0ljn9rd65371t5cb4eh5pqe --username admin@example.com --password Passw0rd!
+aws cognito-idp admin-confirm-sign-up --region us-west-2 --user-pool-id us-west-2_J7AM3vtJX --username admin@example.com
+
+npx aws-api-gateway-cli-test --username admin@example.com --password Passw0rd! --user-pool-id us-west-2_J7AM3vtJX --app-client-id 51j0ljn9rd65371t5cb4eh5pqe --cognito-region us-west-2 --identity-pool-id us-west-2:1304acc8-2bc3-4bb2-ae53-6d7b16338129 --invoke-url https://gqq7uj74a2.execute-api.us-west-2.amazonaws.com/dev --api-gateway-region us-west-2 --path-template /notes --method='POST' --body "{\"content\":\"hello world aws 2020\",\"attachment\":\"hello.jpg\"}"
+
+
+//prod cognito tests
+aws cognito-idp sign-up --region us-west-2 --client-id 2tpddvferlf1r53f07v31hhhmk --username admin@example.com --password Passw0rd!
+aws cognito-idp admin-confirm-sign-up --region us-west-2 --user-pool-id us-west-2_x7WCzrKbz --username admin@example.com
+
+npx aws-api-gateway-cli-test --username admin@example.com --password Passw0rd! --user-pool-id us-west-2_x7WCzrKbz --app-client-id 2tpddvferlf1r53f07v31hhhmk --cognito-region us-west-2 --identity-pool-id us-west-2:969e66db-e225-401f-8b35-6ef06f224a49 --invoke-url https://zjdl035lci.execute-api.us-west-2.amazonaws.com/prod --api-gateway-region us-west-2 --path-template /notes --method='POST' --body "{\"content\":\"hello world aws 2020\",\"attachment\":\"hello.jpg\"}"
+
